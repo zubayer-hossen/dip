@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+            font-family: 'Arial', sans-serif;
+            overflow: scroll;
+        }
+
+        .card {
+            width: 90%;
+            max-width: 400px;
+            height: auto;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .card-header {
+            background: linear-gradient(to right, #ff6a00, #ee0979);
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h2 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            color: #555;
+            margin: 20px 0;
+        }
+
+        .button {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background: #218838;
+            transform: scale(1.1);
+        }
+
+        /* Surprise Page */
+        .surprise {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #4facfe, #00f2fe);
+            z-index: 999;
+            overflow: scroll;
+        }
+
+        .surprise h1 {
+            color: white;
+            text-align: center;
+            margin-top: 10%;
+            font-size: 36px;
+            text-shadow: 2px 2px 5px #000;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .surprise p {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            padding: 0 10px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .surprise .button {
+            margin-top: 30px;
+        }
+
+        /* Particle Effect */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Animated Background */
+
+
+     
+        .animated-bg {
+            background: url('https://i.ibb.co.com/HrNdRRq/IMG-E5576.jpg') no-repeat center center/cover;
+            filter: blur(2px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            animation: moveBackground 10s infinite alternate;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1000;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2"></script>
+</head>
+
+<body>
+    <div class="animated-bg"></div>
+    <div class="card" id="card">
+        <div class="card-header">🎂 Happy Birthday! 🎉</div>
+        <div class="card-content">
+            <h2>Wishing You a Special Day!</h2>
+            <p>May your day be filled with joy, laughter, and unforgettable moments.</p>
+            <button class="button" onclick="showSurprise()">Open Your Surprise 🎁</button>
+        </div>
+    </div>
+    <div class="surprise" id="surprise">
+        <div id="particles-js"></div>
+        <h1>🎈🎉 Happy Birthday, দীপায়ন! 🎊🎁</h1>
+        <p>আজকের এই বিশেষ দিনে তোমার জন্য রইলো আমার আন্তরিক শুভেচ্ছা ও ভালোবাসা। নতুন বছরটা তোমার জীবনে নিয়ে আসুক অসংখ্য সুখ,
+        সাফল্য আর সুন্দর মুহূর্ত।
+        
+        আর হ্যাঁ, তোমার জীবনে রিতু এসেছে—এটা সত্যিই অসাধারণ একটা ব্যাপার! তোমাদের দুজনের সম্পর্ক যেন আরও গভীর হয়, ভালোবাসা
+        দিয়ে একে অপরকে আগলে রাখো। তোমাদের একসাথে কাটানো প্রতিটা মুহূর্ত যেন হয় আনন্দে ভরা।
+        
+        তোমার হাসি যেন সবসময় উজ্জ্বল থাকে, আর রিতুর সাথে তোমার দিনগুলো হয়ে উঠুক জীবনের সবচেয়ে সুন্দর অধ্যায়।
+        
+        আবারও শুভ জন্মদিন, বন্ধু! রিতুকে নিয়ে দারুণ সময় কাটাও আজ।
+        
+        <br> শুভ কামনায় <br>জুবায়ের।</p>
+        <button class="button" onclick="closeSurprise()">Back to Card</button>
+        <div class="confetti"></div>
+    </div>
+    <script>
+        function showSurprise() {
+            document.getElementById('card').style.display = 'none';
+            document.getElementById('surprise').style.display = 'block';
+            particlesJS('particles-js', {
+                particles: { number: { value: 100 }, size: { value: 4 }, move: { speed: 4 } }
+            });
+            confetti({ particleCount: 200, spread: 70, origin: { y: 0.6 } });
+        }
+        function closeSurprise() {
+            document.getElementById('card').style.display = 'block';
+            document.getElementById('surprise').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
